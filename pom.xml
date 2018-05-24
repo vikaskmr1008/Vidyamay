@@ -11,86 +11,86 @@
 	<name>vidyamay</name>
 	<description>School management project</description>
 
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.1.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
-
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<version.spring.boot>2.0.1.RELEASE</version.spring.boot>
+		<version.swagger>2.6.1</version.swagger>
+		<version.datanucleus>5.1.1</version.datanucleus>
+		<version.jdo.api>3.0.1</version.jdo.api>
+		<version.javax.jdo>3.2.0-m7</version.javax.jdo>
+		<version.mysql.connector>5.1.17</version.mysql.connector>
 	</properties>
 
 	<dependencies>
 	    <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
+			<version>${version.spring.boot}</version>
 		</dependency> 
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<version>${version.spring.boot}</version>
 			<scope>test</scope>
 		</dependency>
 		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<version>${version.spring.boot}</version>
 		</dependency>
 		
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
-			<version>2.6.1</version>
+			<version>${version.swagger}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
-			<version>2.6.1</version>
+			<version>${version.swagger}</version>
 		</dependency>
 		
 		<dependency>
 			<groupId>javax.jdo</groupId>
 			<artifactId>jdo-api</artifactId>
-			<version>3.0.1</version>
+			<version>${version.jdo.api}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.datanucleus</groupId>
 			<artifactId>datanucleus-core</artifactId>
-			<version>5.1.1</version>
+			<version>${version.datanucleus}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.datanucleus</groupId>
 			<artifactId>datanucleus-api-jdo</artifactId>
-			<version>5.1.1</version>
+			<version>${version.datanucleus}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.datanucleus</groupId>
 			<artifactId>javax.jdo</artifactId>
-			<version>3.2.0-m7</version>
+			<version>${version.javax.jdo}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.datanucleus</groupId>
 			<artifactId>datanucleus-rdbms</artifactId>
-			<version>5.1.1</version>
+			<version>${version.datanucleus}</version>
 		</dependency>
 		
 		<dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+            <version>${version.mysql.connector}</version>
         </dependency>
-		
 		
 	</dependencies>
 
 	<build>
-	
 	  <pluginManagement>
 			<plugins>
 				<plugin>
@@ -201,10 +201,12 @@
 						</goals>
 					</execution>
 				</executions>
+				<configuration>
+		            <verbose>true</verbose>
+		            <fork>false</fork>   <!-- Solve windows line too long error -->
+              </configuration>
 			</plugin>
-			
 		</plugins>
+		
 	</build>
-
-
 </project>
