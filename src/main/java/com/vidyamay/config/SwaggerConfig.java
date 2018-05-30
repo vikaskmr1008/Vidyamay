@@ -31,10 +31,9 @@ public class SwaggerConfig {
 	 
 	private ApiInfo apiInfo() {
 		return new ApiInfoBuilder()
-                .title("Vidyamay REST API POC")
+                .title("Vidyamay Education Pvt Ltd")
                 .description("Spring Boot + Spring REST + Spring Security + Hibernate + JPA + Swagger + MySql")
                 .termsOfServiceUrl("http://www.vidyamay.com")
-                .contact("Vidyamay Education Pvt Ltd")
                 .license("Apache License Version 2.0")
                 .version("0.0.1")
                 .build();
