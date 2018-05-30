@@ -1,4 +1,4 @@
-package com.vidyamay.vidyamay;
+/*package com.vidyamay.vidyamay;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,3 +14,4 @@ public class VidyamayApplicationTests {
 	}
 
 }
+*/

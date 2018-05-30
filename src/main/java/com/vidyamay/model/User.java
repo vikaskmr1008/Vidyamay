@@ -3,16 +3,20 @@
  */
 package com.vidyamay.model;
 
+import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
+
+import org.datanucleus.api.jdo.annotations.SoftDelete;
 
 /**
  * @author Vidyamay Education Pvt Ltd.
  *
  */
 @PersistenceCapable
-public class User extends BaseModel {
+@SoftDelete
+public class User/* extends BaseModel*/ {
 	
 	/**
 	 * 
@@ -20,6 +24,7 @@ public class User extends BaseModel {
 	private static final long serialVersionUID = 852827404728980443L;
 	
 	@PrimaryKey
+	@Persistent(valueStrategy=IdGeneratorStrategy.INCREMENT)
 	private Long id;
 	
 	@Persistent
